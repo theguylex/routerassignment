@@ -45,15 +45,16 @@ class FetchRandomUser extends Component {
         <section className="api-container">
           <section className="avi" key={items.id}>
             {items.map((item) => (
-              <img src={item.picture.large} alt={item.name.first} />
+              <img src={item.picture.large} alt="user avi" />
             ))}
+            <div key={items.id}>{items.map(item =>(<h1>{item.name.first} {item.name.last}</h1>))}</div>
           </section>
           <div className="paginate">
             <button className="prev">Prev</button>
             <button className="next">Next</button>
           </div>
           {/* try to figure out how to fetch & display both image-name together */}
-          {/* <div key={items.id}>{items.map(item =>(<h1>{item.name.first}</h1>))}</div> */}
+          {/* <div key={items.id}>{items.map(item =>(<h1>{item.name.first} {item.name.last}</h1>))}</div> */}
         </section>
       );
   }
